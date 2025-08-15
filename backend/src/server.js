@@ -18,6 +18,7 @@ const app = express();
 const server = http.createServer(app);
 const io = initSocket(server);
 
+app.locals.io = io;
 app.use(express.json({ limit: "10mb" }));
 app.use(cookieParser());
 app.use(cors({
